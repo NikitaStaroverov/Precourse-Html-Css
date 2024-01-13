@@ -11,8 +11,22 @@ body {
 	font-style: normal;
 }
 
+.container {
+	height: 100%;
+	width: 100%;
+	max-width: 1170px;
+	padding: 0 15px;
+	margin-left: auto;
+	margin-right: auto;
+	border: 1px solid red;
+}
+
 a {
 	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
 }
 
 ul {
@@ -22,6 +36,12 @@ ul {
 button {
 	border: none;
 	background-color: transparent;
+	cursor: pointer;
+	transition: 0.2s;
+}
+
+button:hover {
+	transform: translateY(-5px);
 }
 
 .title {
@@ -45,6 +65,17 @@ button {
 	padding: 14px 0;
 }
 
+.hader-wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.menu {
+	display: flex;
+	gap: 24px;
+}
+
 .menu-link {
 	color: #fff;
 	font-size: 12px;
@@ -55,6 +86,13 @@ button {
 }
 
 /*============Стили для section-1============*/
+
+.main-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 800px;
+}
 
 .main-title {
 	color: #363940;
@@ -67,6 +105,7 @@ button {
 
 .main-title .text {
 	margin-bottom: 40px;
+	max-width: 380px;
 }
 
 .button {
@@ -82,11 +121,21 @@ button {
 	text-transform: uppercase;
 }
 
+.main-img {
+	align-self: flex-end;
+}
+
 /*============Стили для section-2============*/
 
 .rates-section {
 	background-color: #f9fafc;
 	padding: 100px 0;
+}
+
+.rates-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .rates-section .title {
@@ -161,6 +210,11 @@ td {
 	padding: 100px 0;
 }
 
+.account-wrapper {
+	display: flex;
+	justify-content: space-between;
+}
+
 .create-account-section .title {
 	margin-bottom: 50px;
 }
@@ -178,6 +232,20 @@ td {
 }
 
 /*============Стили для Form============*/
+
+.form {
+	width: 100%;
+	max-width: 500px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.fields-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+}
 
 input,
 select,
@@ -213,6 +281,13 @@ input[type='date'],
 select {
 	width: 230px;
 	height: 50px;
+	flex-grow: 1;
+}
+
+.stack,
+fieldset {
+	display: flex;
+	column-gap: 30px;
 }
 
 fieldset {
@@ -226,7 +301,7 @@ textarea {
 	resize: none;
 }
 
-input[type='submit'] {
+button[type='submit'] {
 	width: 100%;
 	background: #0a61f7;
 	color: #fff;
@@ -261,4 +336,10 @@ small {
 	line-height: 22px; /* 157.143% */
 }
 
+input[type='radio'],
+input[type='checkbox'],
+input[type='date'],
+select {
+	cursor: pointer;
+}
 /*============Кастом checkbox and radio============*/
