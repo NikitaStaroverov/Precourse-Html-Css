@@ -9,6 +9,7 @@ html,
 body {
 	font-family: 'Rubik', sans-serif;
 	font-style: normal;
+	min-width: 375px;
 }
 
 .container {
@@ -18,7 +19,6 @@ body {
 	padding: 0 15px;
 	margin-left: auto;
 	margin-right: auto;
-	border: 1px solid red;
 }
 
 a {
@@ -85,13 +85,16 @@ button:hover {
 	text-transform: uppercase;
 }
 
+.menu-icon {
+	display: none;
+}
 /*============Стили для section-1============*/
 
 .main-wrapper {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 800px;
+	min-height: 800px;
 }
 
 .main-title {
@@ -103,7 +106,7 @@ button:hover {
 	margin-bottom: 30px;
 }
 
-.main-title .text {
+.main .text {
 	margin-bottom: 40px;
 	max-width: 380px;
 }
@@ -123,6 +126,8 @@ button:hover {
 
 .main-img {
 	align-self: flex-end;
+	max-width: 656px;
+	width: 100%;
 }
 
 /*============Стили для section-2============*/
@@ -144,6 +149,7 @@ button:hover {
 
 .rates-section .text {
 	margin-bottom: 40px;
+	text-align: center;
 }
 
 .table {
@@ -241,12 +247,6 @@ td {
 	gap: 20px;
 }
 
-.fields-wrapper {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 20px;
-}
-
 input,
 select,
 fieldset,
@@ -284,10 +284,23 @@ select {
 	flex-grow: 1;
 }
 
+input[type='radio'],
+input[type='checkbox'],
+input[type='date'],
+select {
+	cursor: pointer;
+}
+
 .stack,
 fieldset {
 	display: flex;
 	column-gap: 30px;
+}
+
+.fields-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
 }
 
 fieldset {
@@ -301,15 +314,8 @@ textarea {
 	resize: none;
 }
 
-button[type='submit'] {
+form .button {
 	width: 100%;
-	background: #0a61f7;
-	color: #fff;
-	font-size: 14px;
-	font-weight: 500;
-	line-height: 19.6px; /* 140% */
-	letter-spacing: 1.4px;
-	text-transform: uppercase;
 }
 
 select {
@@ -336,10 +342,79 @@ small {
 	line-height: 22px; /* 157.143% */
 }
 
-input[type='radio'],
-input[type='checkbox'],
-input[type='date'],
-select {
-	cursor: pointer;
-}
 /*============Кастом checkbox and radio============*/
+
+/*============Адаптив под плншеты============*/
+
+@media screen and (max-width: 1400px) {
+	.main-wrapper {
+		flex-direction: column;
+		min-height: auto;
+	}
+
+	.main-info {
+		align-self: flex-start;
+		margin: 100px 0 80px;
+	}
+
+	.main-img {
+		align-self: center;
+	}
+
+	.table {
+		width: 940px;
+	}
+
+	.table-wrapper {
+		overflow-x: auto;
+		width: 100%;
+		max-width: 940px;
+	}
+
+	.account-wrapper {
+		flex-direction: column;
+		gap: 70px;
+	}
+
+	.create-account-section .text {
+		max-width: unset;
+	}
+
+	form {
+		align-self: center;
+	}
+}
+
+/*============Адаптив под мобилки============*/
+
+@media screen and (max-width: 576px) {
+	.menu {
+		display: none;
+	}
+
+	.menu-icon {
+		display: block;
+	}
+
+	.main-info {
+		margin: 60px 0;
+	}
+
+	.main-title {
+		font-size: 52px;
+		line-height: 60px;
+	}
+
+	.account-wrapper {
+		gap: 60px;
+	}
+
+	label {
+		white-space: nowrap;
+	}
+
+	fieldset {
+		flex-wrap: wrap;
+		row-gap: 20px;
+	}
+}
